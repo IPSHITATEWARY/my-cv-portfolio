@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { useScrollReveal, revealClass } from "@/hooks/useScrollReveal";
 
 const skills = [
@@ -11,6 +10,8 @@ const skills = [
     label: "label-violet",
     bg: "hover:bg-violet/5",
     border: "border-l border-violet/40",
+    dot: "bg-violet",
+    hover: "group-hover:text-violet",
   },
   {
     category: "DATABASES",
@@ -21,16 +22,20 @@ const skills = [
     label: "label-cyan",
     bg: "hover:bg-cyan/5",
     border: "border-l border-cyan/40",
+    dot: "bg-cyan",
+    hover: "group-hover:text-cyan",
   },
   {
     category: "DATA & VISUALIZATION",
-    items: ["Power BI", "RFM Analysis", "K-Means", "Data Preprocessing"],
+    items: ["Power BI", "RFM Analysis", "K-Means", "Preprocessing"],
     col: "03",
     color: "text-crimson",
     rule: "editorial-rule-crimson",
     label: "label-crimson",
     bg: "hover:bg-crimson/5",
     border: "border-l border-crimson/40",
+    dot: "bg-crimson",
+    hover: "group-hover:text-crimson",
   },
   {
     category: "DESIGN TOOLS",
@@ -41,6 +46,8 @@ const skills = [
     label: "label-amber",
     bg: "hover:bg-amber/5",
     border: "border-l border-amber/40",
+    dot: "bg-amber",
+    hover: "group-hover:text-amber",
   },
   {
     category: "DEV ENVIRONMENT",
@@ -51,6 +58,8 @@ const skills = [
     label: "label-violet",
     bg: "hover:bg-violet/5",
     border: "border-l border-violet/40",
+    dot: "bg-violet",
+    hover: "group-hover:text-violet",
   },
 ];
 
@@ -58,7 +67,7 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
   const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
   return (
     <div
-      ref={ref as React.RefObject<HTMLDivElement>}
+      ref={ref}
       className={`py-8 px-6 group transition-colors duration-300 cursor-default
         ${skill.border} ${skill.bg}
         ${revealClass(isVisible, "animate-reveal-up", `delay-${(index + 1) * 100}`)}`}
@@ -71,8 +80,8 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
       <ul className="space-y-3">
         {skill.items.map((item) => (
           <li key={item} className="flex items-start gap-2">
-            <span className={`mt-[7px] w-1.5 h-1.5 flex-shrink-0 rounded-full ${skill.color} bg-current`} />
-            <span className={`font-display font-black text-foreground text-xl leading-tight group-hover:${skill.color} transition-colors duration-200`}>
+            <span className={`mt-[7px] w-1.5 h-1.5 flex-shrink-0 rounded-full ${skill.dot}`} />
+            <span className={`font-display font-black text-foreground text-xl leading-tight transition-colors duration-200 ${skill.hover}`}>
               {item}
             </span>
           </li>
@@ -88,13 +97,11 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="bg-ink py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Header */}
-        <div
-          ref={headRef as React.RefObject<HTMLDivElement>}
-          className="flex items-start justify-between mb-16"
-        >
+        <div ref={headRef} className="flex items-start justify-between mb-16">
           <div>
-            <div className={`label-cyan mb-4 ${revealClass(headVisible, "animate-reveal-left")}`}>— SECTION 02</div>
+            <div className={`label-cyan mb-4 ${revealClass(headVisible, "animate-reveal-left")}`}>
+              — SECTION 02
+            </div>
             <h2 className={`font-display font-black text-foreground text-[clamp(3rem,8vw,8rem)] leading-none tracking-tighter ${revealClass(headVisible, "animate-reveal-up", "delay-100")}`}>
               SKILLS &amp;<br />
               <span className="text-shimmer">TOOLS</span>
@@ -108,7 +115,6 @@ const SkillsSection = () => {
 
         <div className={`editorial-rule mb-12 ${revealClass(headVisible, "animate-line-grow", "delay-300")}`} />
 
-        {/* Skills grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-0">
           {skills.map((skill, i) => (
             <SkillCard key={skill.col} skill={skill} index={i} />

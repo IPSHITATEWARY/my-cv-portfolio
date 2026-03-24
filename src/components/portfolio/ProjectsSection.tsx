@@ -9,13 +9,13 @@ const projects = [
     description:
       "Developed a customer segmentation model using RFM analysis to analyze purchasing behavior in e-commerce datasets. Implemented K-Means clustering to group customers into distinct segments.",
     link: "https://github.com",
-    accent: "border-l-4 border-l-violet",
-    tagColor: "border-violet/40 text-violet",
+    accentBorder: "border-l-4 border-l-violet",
+    tagStyle: "border-violet/40 text-violet",
     numColor: "text-violet",
     subtitleColor: "text-violet",
     arrowColor: "text-violet",
     hoverTitle: "hover:text-violet",
-    bg: "hover:bg-violet/5",
+    hoverBg: "hover:bg-violet/5",
   },
   {
     num: "No_02",
@@ -25,13 +25,13 @@ const projects = [
     description:
       "Built a movie recommendation system using collaborative filtering based on user rating patterns. Constructed a movie-user matrix and computed cosine similarity for top-N recommendations.",
     link: "https://github.com",
-    accent: "border-l-4 border-l-crimson",
-    tagColor: "border-crimson/40 text-crimson",
+    accentBorder: "border-l-4 border-l-crimson",
+    tagStyle: "border-crimson/40 text-crimson",
     numColor: "text-crimson",
     subtitleColor: "text-crimson",
     arrowColor: "text-crimson",
     hoverTitle: "hover:text-crimson",
-    bg: "hover:bg-crimson/5",
+    hoverBg: "hover:bg-crimson/5",
   },
   {
     num: "No_03",
@@ -41,13 +41,13 @@ const projects = [
     description:
       "Created interactive Power BI Dashboards to visualize analytical data and trends. Covering Social Insights and Sales Performance with effective data cleaning and transformation.",
     link: "#",
-    accent: "border-l-4 border-l-cyan",
-    tagColor: "border-cyan/40 text-cyan",
+    accentBorder: "border-l-4 border-l-cyan",
+    tagStyle: "border-cyan/40 text-cyan",
     numColor: "text-cyan",
     subtitleColor: "text-cyan",
     arrowColor: "text-cyan",
     hoverTitle: "hover:text-cyan",
-    bg: "hover:bg-cyan/5",
+    hoverBg: "hover:bg-cyan/5",
   },
   {
     num: "No_04",
@@ -57,29 +57,23 @@ const projects = [
     description:
       "Collaborated with a college team to design multiple posters and presentation slides. Merged individual layouts into a professional PowerPoint for final presentation.",
     link: "#",
-    accent: "border-l-4 border-l-amber",
-    tagColor: "border-amber/40 text-amber",
+    accentBorder: "border-l-4 border-l-amber",
+    tagStyle: "border-amber/40 text-amber",
     numColor: "text-amber",
     subtitleColor: "text-amber",
     arrowColor: "text-amber",
     hoverTitle: "hover:text-amber",
-    bg: "hover:bg-amber/5",
+    hoverBg: "hover:bg-amber/5",
   },
 ];
 
-const ProjectRow = ({
-  project,
-  index,
-}: {
-  project: (typeof projects)[0];
-  index: number;
-}) => {
+const ProjectRow = ({ project, index }: { project: (typeof projects)[0]; index: number }) => {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
   return (
     <div
-      ref={ref as React.RefObject<HTMLDivElement>}
-      className={`group border-b border-rule py-10 md:py-12 transition-all duration-300 cursor-pointer pl-0
-        ${project.accent} ${project.bg}
+      ref={ref}
+      className={`group border-b border-rule py-10 md:py-12 transition-all duration-300 cursor-pointer
+        ${project.accentBorder} ${project.hoverBg}
         ${revealClass(isVisible, "animate-reveal-up", `delay-${index * 100}`)}`}
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-start px-4 md:px-6">
@@ -97,7 +91,7 @@ const ProjectRow = ({
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className={`px-2 py-0.5 border font-mono-custom text-[0.6rem] tracking-widest uppercase ${project.tagColor}`}
+                className={`px-2 py-0.5 border font-mono-custom text-[0.6rem] tracking-widest uppercase ${project.tagStyle}`}
               >
                 {tag}
               </span>
@@ -131,9 +125,11 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="bg-card py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div ref={headRef as React.RefObject<HTMLDivElement>} className="flex items-end justify-between mb-16">
+        <div ref={headRef} className="flex items-end justify-between mb-16">
           <div>
-            <div className={`label-crimson mb-4 ${revealClass(headVisible, "animate-reveal-left")}`}>— SECTION 03</div>
+            <div className={`label-crimson mb-4 ${revealClass(headVisible, "animate-reveal-left")}`}>
+              — SECTION 03
+            </div>
             <h2 className={`font-display font-black text-foreground text-[clamp(3rem,8vw,8rem)] leading-none tracking-tighter ${revealClass(headVisible, "animate-reveal-up", "delay-100")}`}>
               PROJ<span className="text-crimson">ECTS</span>
             </h2>
