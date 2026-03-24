@@ -62,9 +62,12 @@ export default {
         paper: "hsl(var(--paper))",
         "paper-warm": "hsl(var(--paper-warm))",
         violet: {
-          DEFAULT: "hsl(var(--accent-violet))",
+          DEFAULT: "hsl(var(--violet))",
           dim: "hsl(var(--accent-violet-dim))",
         },
+        crimson: "hsl(var(--crimson))",
+        amber: "hsl(var(--amber))",
+        cyan: "hsl(var(--cyan))",
         rule: "hsl(var(--rule-color))",
         caption: "hsl(var(--caption-color))",
       },
