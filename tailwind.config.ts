@@ -57,6 +57,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Editorial custom tokens
+        ink: "hsl(var(--ink))",
+        paper: "hsl(var(--paper))",
+        "paper-warm": "hsl(var(--paper-warm))",
+        violet: {
+          DEFAULT: "hsl(var(--accent-violet))",
+          dim: "hsl(var(--accent-violet-dim))",
+        },
+        rule: "hsl(var(--rule-color))",
+        caption: "hsl(var(--caption-color))",
       },
       borderRadius: {
         lg: "var(--radius)",
