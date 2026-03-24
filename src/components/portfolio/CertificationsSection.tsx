@@ -8,11 +8,11 @@ const certifications = [
     location: "Bhubaneswar, Odisha",
     desc: "Poster, logo, and presentation design using Canva.",
     tag: "DESIGN",
-    color: "text-amber",
-    rule: "editorial-rule-amber",
-    label: "label-amber",
-    border: "border-l border-amber/40",
-    bg: "hover:bg-amber/5",
+    labelClass: "label-amber",
+    ruleClass: "editorial-rule-amber",
+    borderClass: "border-l border-amber/40",
+    bgClass: "hover:bg-amber/5",
+    titleHover: "hover:text-amber",
   },
   {
     title: "Build School: Startup Pitch",
@@ -21,11 +21,11 @@ const certifications = [
     location: "Bhubaneswar, Odisha",
     desc: "Inter-college startup proposal & pitch. Strategic thinking, public speaking, teamwork.",
     tag: "BUSINESS",
-    color: "text-crimson",
-    rule: "editorial-rule-crimson",
-    label: "label-crimson",
-    border: "border-l border-crimson/40",
-    bg: "hover:bg-crimson/5",
+    labelClass: "label-crimson",
+    ruleClass: "editorial-rule-crimson",
+    borderClass: "border-l border-crimson/40",
+    bgClass: "hover:bg-crimson/5",
+    titleHover: "hover:text-crimson",
   },
   {
     title: "Power BI Certification",
@@ -34,11 +34,11 @@ const certifications = [
     location: "Online",
     desc: "Intermediate Power BI: dashboard creation, data analysis, and reporting.",
     tag: "DATA",
-    color: "text-cyan",
-    rule: "editorial-rule-cyan",
-    label: "label-cyan",
-    border: "border-l border-cyan/40",
-    bg: "hover:bg-cyan/5",
+    labelClass: "label-cyan",
+    ruleClass: "editorial-rule-cyan",
+    borderClass: "border-l border-cyan/40",
+    bgClass: "hover:bg-cyan/5",
+    titleHover: "hover:text-cyan",
   },
 ];
 
@@ -69,21 +69,21 @@ const education = [
   },
 ];
 
-const CertCard = ({ cert, index }: { cert: typeof certifications[0]; index: number }) => {
+const CertCard = ({ cert, index }: { cert: (typeof certifications)[0]; index: number }) => {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
   return (
     <div
-      ref={ref as React.RefObject<HTMLDivElement>}
+      ref={ref}
       className={`py-8 px-6 group transition-colors duration-300
-        ${cert.border} ${cert.bg}
+        ${cert.borderClass} ${cert.bgClass}
         ${revealClass(isVisible, "animate-reveal-up", `delay-${(index + 1) * 150}`)}`}
     >
       <div className="flex justify-between items-start mb-6">
-        <span className={`${cert.label} text-[0.55rem]`}>{cert.tag}</span>
+        <span className={`${cert.labelClass} text-[0.55rem]`}>{cert.tag}</span>
         <span className="caption-text">{cert.period}</span>
       </div>
-      <div className={`${cert.rule} mb-6`} />
-      <h3 className={`font-display font-black text-foreground text-xl leading-tight group-hover:${cert.color} transition-colors duration-200 mb-2`}>
+      <div className={`${cert.ruleClass} mb-6`} />
+      <h3 className={`font-display font-black text-foreground text-xl leading-tight group transition-colors duration-200 mb-2 ${cert.titleHover}`}>
         {cert.title}
       </h3>
       <p className="caption-text mb-3">{cert.org} · {cert.location}</p>
@@ -92,11 +92,11 @@ const CertCard = ({ cert, index }: { cert: typeof certifications[0]; index: numb
   );
 };
 
-const EduRow = ({ edu, index }: { edu: typeof education[0]; index: number }) => {
+const EduRow = ({ edu, index }: { edu: (typeof education)[0]; index: number }) => {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
   return (
     <div
-      ref={ref as React.RefObject<HTMLDivElement>}
+      ref={ref}
       className={`border-b border-rule py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-4 items-center
         hover:bg-secondary/30 transition-colors duration-300 px-2
         ${revealClass(isVisible, "animate-reveal-up", `delay-${index * 100}`)}`}
@@ -126,7 +126,7 @@ const CertificationsSection = () => {
     <section id="certifications" className="bg-ink py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Cert header */}
-        <div ref={certHead as React.RefObject<HTMLDivElement>}>
+        <div ref={certHead}>
           <div className={`label-amber mb-4 ${revealClass(certVisible, "animate-reveal-left")}`}>— SECTION 04</div>
           <h2 className={`font-display font-black text-foreground text-[clamp(2rem,6vw,6rem)] leading-none tracking-tighter mb-16 ${revealClass(certVisible, "animate-reveal-up", "delay-100")}`}>
             CERTIF<span className="text-amber">ICATIONS</span>
@@ -142,7 +142,7 @@ const CertificationsSection = () => {
         </div>
 
         {/* Education header */}
-        <div ref={eduHead as React.RefObject<HTMLDivElement>}>
+        <div ref={eduHead}>
           <div className={`label-cyan mb-4 ${revealClass(eduVisible, "animate-reveal-left")}`}>— SECTION 05</div>
           <h2 className={`font-display font-black text-foreground text-[clamp(2rem,6vw,6rem)] leading-none tracking-tighter mb-16 ${revealClass(eduVisible, "animate-reveal-up", "delay-100")}`}>
             EDU<span className="text-cyan">CATION</span>
