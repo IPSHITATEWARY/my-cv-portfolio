@@ -23,7 +23,7 @@ const projects = [
     subtitle: "Dynamic Navigation & Transit",
     tags: ["React", "TypeScript", "Node.js", "API Integration"],
     description:
-      "Created Wayze, a dynamic route navigation and public transit assistant system built using modern web standards. Features interactive maps and real-time transit schedule integration.",
+      "Creating Wayze, a dynamic route navigation and public transit assistant system built using modern web standards. Features interactive maps and real-time transit schedule integration.",
     link: "https://wayze-production.up.railway.app/",
     accentBorder: "border-l-4 border-l-crimson",
     tagStyle: "border-crimson/40 text-crimson",
@@ -32,14 +32,15 @@ const projects = [
     arrowColor: "text-crimson",
     hoverTitle: "hover:text-crimson",
     hoverBg: "hover:bg-crimson/5",
+    isOngoing: true,
   },
   {
     num: "No_03",
-    title: "Spinex Medical Imaging",
-    subtitle: "Spine & Med-Tech Analysis",
-    tags: ["Python", "Deep Learning", "Medical Vision", "PyTorch"],
+    title: "Spinex",
+    subtitle: "AI Video Editor & Template Generator",
+    tags: ["React.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Radix UI", "API Workflows"],
     description:
-      "Built Spinex, a medical vision analysis tool designed to perform diagnostic assessments on spine scans and MRI imaging. Leveraged convolutional neural networks to assist in clinical segmentation tasks.",
+      "Developing Spinex, an AI-powered creator platform that extracts editing templates directly from raw videos. Built scalable modular editor components, reusable frontend structures, and dynamic template generation.",
     link: "https://github.com/IPSHITATEWARY/spinex",
     accentBorder: "border-l-4 border-l-cyan",
     tagStyle: "border-cyan/40 text-cyan",
@@ -48,6 +49,7 @@ const projects = [
     arrowColor: "text-cyan",
     hoverTitle: "hover:text-cyan",
     hoverBg: "hover:bg-cyan/5",
+    isOngoing: true,
   },
   {
     num: "No_04",
@@ -177,8 +179,13 @@ const ProjectRow = ({ project, index }: { project: (typeof projects)[0]; index: 
           <span className={`font-mono-custom text-xs ${project.numColor}`}>{project.num}</span>
         </div>
         <div className="md:col-span-4">
-          <h3 className={`font-display font-black text-foreground text-3xl md:text-4xl leading-tight tracking-tight transition-colors duration-200 ${project.hoverTitle}`}>
-            {project.title}
+          <h3 className={`font-display font-black text-foreground text-3xl md:text-4xl leading-tight tracking-tight transition-colors duration-200 ${project.hoverTitle} flex items-center flex-wrap gap-2.5`}>
+            <span>{project.title}</span>
+            {project.isOngoing && (
+              <span className="font-mono-custom text-[0.55rem] font-bold tracking-widest uppercase bg-crimson text-paper px-2 py-0.5 animate-pulse rounded-[2px] leading-none select-none">
+                ONGOING
+              </span>
+            )}
           </h3>
           <p className={`font-mono-custom text-xs mt-1 tracking-widest uppercase ${project.subtitleColor}`}>
             {project.subtitle}
