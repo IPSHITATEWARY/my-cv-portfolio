@@ -5,9 +5,10 @@ const ContactSection = () => {
   const { ref: linksRef, isVisible: linksVisible } = useScrollReveal();
 
   const socials = [
-    { label: "LINKEDIN", sub: "Professional profile", colorClass: "text-violet", hoverBg: "hover:bg-violet/5", barClass: "bg-violet", hoverColor: "hover:text-violet" },
-    { label: "GITHUB",   sub: "Code repositories",   colorClass: "text-cyan",   hoverBg: "hover:bg-cyan/5",   barClass: "bg-cyan",   hoverColor: "hover:text-cyan" },
-    { label: "LEETCODE", sub: "DSA practice",         colorClass: "text-amber",  hoverBg: "hover:bg-amber/5",  barClass: "bg-amber",  hoverColor: "hover:text-amber" },
+    { label: "LINKEDIN", url: "https://www.linkedin.com/in/ipshita-tewary-b6782235a/", sub: "Professional profile", colorClass: "text-violet", hoverBg: "hover:bg-violet/5", barClass: "bg-violet", hoverColor: "hover:text-violet" },
+    { label: "GITHUB",   url: "https://github.com/IPSHITATEWARY", sub: "Code repositories",   colorClass: "text-cyan",   hoverBg: "hover:bg-cyan/5",   barClass: "bg-cyan",   hoverColor: "hover:text-cyan" },
+    { label: "LEETCODE", url: "https://leetcode.com/u/IPSHITATEWARY/", sub: "DSA practice",         colorClass: "text-amber",  hoverBg: "hover:bg-amber/5",  barClass: "bg-amber",  hoverColor: "hover:text-amber" },
+    { label: "INSTAGRAM", url: "https://www.instagram.com/theipshitatewary?igsh=NTYxc2dldmMwODA5&utm_source=qr", sub: "Creative & Social media", colorClass: "text-crimson", hoverBg: "hover:bg-crimson/5", barClass: "bg-crimson", hoverColor: "hover:text-crimson" },
   ];
 
   const contactItems = [
@@ -69,7 +70,9 @@ const ContactSection = () => {
             {socials.map((link, i) => (
               <a
                 key={link.label}
-                href="#"
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`group flex items-center justify-between border-b border-rule py-6 px-2 transition-all duration-200
                   ${link.hoverBg}
                   ${revealClass(linksVisible, "animate-reveal-right", `delay-${i * 150}`)}`}

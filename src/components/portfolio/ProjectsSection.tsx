@@ -3,12 +3,12 @@ import { useScrollReveal, revealClass } from "@/hooks/useScrollReveal";
 const projects = [
   {
     num: "No_01",
-    title: "Customer Segmentation",
-    subtitle: "RFM Analysis × K-Means",
-    tags: ["Python", "K-Means", "Data Viz", "Scikit-learn"],
+    title: "AI Drive Agent",
+    subtitle: "Intelligent Drive Assistant",
+    tags: ["Python", "Streamlit", "Generative AI", "Computer Vision"],
     description:
-      "Developed a customer segmentation model using RFM analysis to analyze purchasing behavior in e-commerce datasets. Implemented K-Means clustering to group customers into distinct segments.",
-    link: "https://github.com",
+      "Developed an AI-powered driver intelligence assistant that features advanced analytics and computer vision workflows. Built on Streamlit, providing real-time visual alerts and telemetry simulations.",
+    link: "https://ai-drive-agent-xd2yqpzzbn6dnarpohd2bk.streamlit.app/",
     accentBorder: "border-l-4 border-l-violet",
     tagStyle: "border-violet/40 text-violet",
     numColor: "text-violet",
@@ -19,12 +19,12 @@ const projects = [
   },
   {
     num: "No_02",
-    title: "Movie Recommendation",
-    subtitle: "Cosine Similarity Engine",
-    tags: ["Python", "Collaborative Filtering", "Cosine Similarity"],
+    title: "Wayze",
+    subtitle: "Dynamic Navigation & Transit",
+    tags: ["React", "TypeScript", "Node.js", "API Integration"],
     description:
-      "Built a movie recommendation system using collaborative filtering based on user rating patterns. Constructed a movie-user matrix and computed cosine similarity for top-N recommendations.",
-    link: "https://github.com",
+      "Created Wayze, a dynamic route navigation and public transit assistant system built using modern web standards. Features interactive maps and real-time transit schedule integration.",
+    link: "https://wayze-production.up.railway.app/",
     accentBorder: "border-l-4 border-l-crimson",
     tagStyle: "border-crimson/40 text-crimson",
     numColor: "text-crimson",
@@ -35,12 +35,12 @@ const projects = [
   },
   {
     num: "No_03",
-    title: "Power BI Dashboards",
-    subtitle: "Social & Sales Insights",
-    tags: ["Power BI", "Data Cleaning", "DAX", "Reporting"],
+    title: "Spinex Medical Imaging",
+    subtitle: "Spine & Med-Tech Analysis",
+    tags: ["Python", "Deep Learning", "Medical Vision", "PyTorch"],
     description:
-      "Created interactive Power BI Dashboards to visualize analytical data and trends. Covering Social Insights and Sales Performance with effective data cleaning and transformation.",
-    link: "#",
+      "Built Spinex, a medical vision analysis tool designed to perform diagnostic assessments on spine scans and MRI imaging. Leveraged convolutional neural networks to assist in clinical segmentation tasks.",
+    link: "https://github.com/IPSHITATEWARY/spinex",
     accentBorder: "border-l-4 border-l-cyan",
     tagStyle: "border-cyan/40 text-cyan",
     numColor: "text-cyan",
@@ -51,12 +51,12 @@ const projects = [
   },
   {
     num: "No_04",
-    title: "Graphic Design",
-    subtitle: "Group Publication Project",
-    tags: ["Canva", "Figma", "Layout Design", "Branding"],
+    title: "Customer Segmentation",
+    subtitle: "RFM Analysis × K-Means",
+    tags: ["Python", "K-Means", "Data Viz", "Scikit-learn"],
     description:
-      "Collaborated with a college team to design multiple posters and presentation slides. Merged individual layouts into a professional PowerPoint for final presentation.",
-    link: "#",
+      "Developed a customer segmentation model using RFM analysis to analyze purchasing behavior in e-commerce datasets. Implemented K-Means clustering to group customers into distinct segments.",
+    link: "https://github.com/IPSHITATEWARY/customer-segmentation-rfm-kmeans",
     accentBorder: "border-l-4 border-l-amber",
     tagStyle: "border-amber/40 text-amber",
     numColor: "text-amber",
@@ -64,6 +64,102 @@ const projects = [
     arrowColor: "text-amber",
     hoverTitle: "hover:text-amber",
     hoverBg: "hover:bg-amber/5",
+  },
+  {
+    num: "No_05",
+    title: "Network Security",
+    subtitle: "Cryptographic Analysis Tool",
+    tags: ["Cybersecurity", "Python", "Cryptography", "Network Protocols"],
+    description:
+      "Collaborated on a network security application designed to analyze packet flows and implement key cryptographic handshake models. Provides visual traffic inspection dashboards.",
+    link: "https://github.com/Adarsh2004ku/Network_Security",
+    accentBorder: "border-l-4 border-l-violet",
+    tagStyle: "border-violet/40 text-violet",
+    numColor: "text-violet",
+    subtitleColor: "text-violet",
+    arrowColor: "text-violet",
+    hoverTitle: "hover:text-violet",
+    hoverBg: "hover:bg-violet/5",
+  },
+  {
+    num: "No_06",
+    title: "Phishing Analysis",
+    subtitle: "Security Threat Intelligence",
+    tags: ["Power BI", "DAX", "Threat Analysis", "Incident Response"],
+    description:
+      "Created an interactive Power BI dashboard tracking phishing campaign statistics, attack vectors, and incident management cycles. Designed complex DAX metrics to assess organization threat levels.",
+    link: "https://github.com/IPSHITATEWARY/powerbi-phishing-analysis",
+    accentBorder: "border-l-4 border-l-crimson",
+    tagStyle: "border-crimson/40 text-crimson",
+    numColor: "text-crimson",
+    subtitleColor: "text-crimson",
+    arrowColor: "text-crimson",
+    hoverTitle: "hover:text-crimson",
+    hoverBg: "hover:bg-crimson/5",
+  },
+  {
+    num: "No_07",
+    title: "Movie Recommendation",
+    subtitle: "Cosine Similarity Engine",
+    tags: ["Python", "Collaborative Filtering", "Cosine Similarity", "Pandas"],
+    description:
+      "Built a movie recommendation system using collaborative filtering based on user rating patterns. Constructed a movie-user matrix and computed cosine similarity for top-N recommendations.",
+    link: "https://github.com/IPSHITATEWARY/movie-recommendation-system",
+    accentBorder: "border-l-4 border-l-cyan",
+    tagStyle: "border-cyan/40 text-cyan",
+    numColor: "text-cyan",
+    subtitleColor: "text-cyan",
+    arrowColor: "text-cyan",
+    hoverTitle: "hover:text-cyan",
+    hoverBg: "hover:bg-cyan/5",
+  },
+  {
+    num: "No_08",
+    title: "Social Dashboard",
+    subtitle: "Engagement & Content Metrics",
+    tags: ["Power BI", "DAX", "Data Analysis", "Reporting"],
+    description:
+      "Created a dedicated Power BI analytics dashboard to track social media engagement KPIs, user demographics, and peak interaction times. Uses custom DAX queries for growth tracking.",
+    link: "https://github.com/IPSHITATEWARY/social-dashboard",
+    accentBorder: "border-l-4 border-l-amber",
+    tagStyle: "border-amber/40 text-amber",
+    numColor: "text-amber",
+    subtitleColor: "text-amber",
+    arrowColor: "text-amber",
+    hoverTitle: "hover:text-amber",
+    hoverBg: "hover:bg-amber/5",
+  },
+  {
+    num: "No_09",
+    title: "Sales Dashboard",
+    subtitle: "Retail Performance Analytics",
+    tags: ["Power BI", "DAX", "Sales Performance", "Revenue Reporting"],
+    description:
+      "Designed an interactive sales operations dashboard to monitor revenue, volume, and seasonal trends. Enables executive-level forecasting through DAX data modeling and cleansing.",
+    link: "https://github.com/IPSHITATEWARY/sales-dashboard",
+    accentBorder: "border-l-4 border-l-violet",
+    tagStyle: "border-violet/40 text-violet",
+    numColor: "text-violet",
+    subtitleColor: "text-violet",
+    arrowColor: "text-violet",
+    hoverTitle: "hover:text-violet",
+    hoverBg: "hover:bg-violet/5",
+  },
+  {
+    num: "No_10",
+    title: "Interactive Portfolio",
+    subtitle: "Bold Editorial CV",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    description:
+      "Developed this interactive, high-contrast, bold editorial portfolio resume using React, TypeScript, and Tailwind CSS. Features dynamic scroll reveal animations and a responsive design system.",
+    link: "https://github.com/IPSHITATEWARY/my-cv-portfolio",
+    accentBorder: "border-l-4 border-l-crimson",
+    tagStyle: "border-crimson/40 text-crimson",
+    numColor: "text-crimson",
+    subtitleColor: "text-crimson",
+    arrowColor: "text-crimson",
+    hoverTitle: "hover:text-crimson",
+    hoverBg: "hover:bg-crimson/5",
   },
 ];
 
@@ -135,7 +231,7 @@ const ProjectsSection = () => {
             </h2>
           </div>
           <div className={`hidden md:block text-right pb-3 ${revealClass(headVisible, "animate-reveal-right", "delay-200")}`}>
-            <span className="caption-text">4 PROJECTS · 2023–2025</span>
+            <span className="caption-text">10 PROJECTS · 2024–2026</span>
           </div>
         </div>
 
